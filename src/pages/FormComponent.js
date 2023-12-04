@@ -104,12 +104,12 @@ const FormComponent = () => {
     const myDaysOfMonth = getDatesForMonthYear(month, year);
     return myDaysOfMonth.map((item) => (
       <tr key={item}>
-        <td align="center">
+        <td className="col-md-2 p-3">
           <Form.Check
             type="checkbox"
             checked={formData[item]?.showRow || false}
             onChange={() => handleCheckboxChange(item)}
-            //   label={item}
+              label={item}
           />
           {/* <FormLabel>{item}</FormLabel> */}
         </td>
@@ -237,7 +237,7 @@ const FormComponent = () => {
   return (
     <React.Fragment>
       <Container style={{ maxHeight: "500px", overflowY: "auto" }}>
-        <Table striped bordered hover responsive>
+        <Table striped bordered responsive>
           <TableHead />
           {loading ? (
             <tbody>
@@ -254,13 +254,14 @@ const FormComponent = () => {
         </Table>
        
       </Container>
-     <Table> <tbody>
+     <table className="table"> 
+      <tbody>
             <tr>
               <td colSpan={5} align="center">
-                Total Premium:${SumOfAll ? SumOfAll[0] : ""}
+                Total Premium: ${SumOfAll ? SumOfAll[0] : ""}
               </td>
               <td colSpan={2} align="center">
-                Total Sub:${SumOfAll ? SumOfAll[1] : ""}
+                Total Sub: ${SumOfAll ? SumOfAll[1] : ""}
               </td>
               {/* <td colSpan={4} align="center">
                 Total Hour:{SumOfAll ? SumOfAll[2] : ""}
@@ -268,11 +269,12 @@ const FormComponent = () => {
               <td colSpan={8} align="end">
                 Total:
                 {SumOfAll
-                  ? `Km's (${SumOfAll[2]}) Expense(${SumOfAll[3]})`
+                  ? `Km's (${SumOfAll[2]}) / Expense(${SumOfAll[3]})`
                   : ""}
               </td>
             </tr>
-          </tbody></Table>
+          </tbody>
+          </table>
       <div
         style={{ display: "flex", justifyContent: "end", marginTop: "10px" }}
       >

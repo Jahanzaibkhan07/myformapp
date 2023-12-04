@@ -3,7 +3,7 @@ import React from "react";
 const TableHead = () => {
  
   const head = [
-    "Show Row",
+    "Tick to Log",
     "Type",
     "Premium",
     "Customer",
@@ -20,7 +20,7 @@ const TableHead = () => {
   ];
   return (
     <thead className="my-2">
-      <tr>
+      <tr align="center">
         {head.map((item, index) => (
           <th scope="col" key={index}>
             {item}

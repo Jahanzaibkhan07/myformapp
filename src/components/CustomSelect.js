@@ -11,8 +11,7 @@ const CustomSelect = ({
   maxHeight="150px"
 }) => {
   return (
-    <Form.Control
-      as="select"
+    <Form.Select
       value={value}
       onChange={onChange}
       disabled={disabled}
@@ -24,7 +23,7 @@ const CustomSelect = ({
           {option}
         </option>
       ))}
-    </Form.Control>
+    </Form.Select>
   );
 };
 
